@@ -17,70 +17,24 @@ class Solution {
         ListNode p = l1;
         ListNode q = l2;
         int c = 0;
-        while(p != null && q != null) {
-            int temp = p.val + q.val + c;
-            if(temp >= 10) {
-                temp -= 10;
-                c = 1;
-            } else {
-                c = 0;
+        while(p != null || q != null || c == 1) {
+            if(p != null) {
+                c += p.val;
+                p = p.next;
             }
-            b = new ListNode(temp);
-            if (res == null) {
-                res = b;
+            if(q != null) {
+                c += q.val;
+                q = q.next;
+            }
+            if(res == null) {
+                res = new ListNode(c % 10);
                 tail = res;
             } else {
+                b = new ListNode(c % 10);
                 tail.next = b;
                 tail = b;
             }
-            p = p.next;
-            q = q.next;
-        }
-        while(p != null) {
-            int temp = p.val + c;
-            if(temp >= 10) {
-                temp -= 10;
-                c = 1;
-            } else {
-                c = 0;
-            }
-            b = new ListNode(temp);
-            if (res == null) {
-                res = b;
-                tail = res;
-            } else {
-                tail.next = b;
-                tail = b;
-            }
-            p = p.next;
-        }
-        while(q != null) {
-            int temp = q.val + c;
-            if(temp >= 10) {
-                temp -= 10;
-                c = 1;
-            } else {
-                c = 0;
-            }
-            b = new ListNode(temp);
-            if (res == null) {
-                res = b;
-                tail = res;
-            } else {
-                tail.next = b;
-                tail = b;
-            }
-            q = q.next;
-        }
-        if(c == 1) {
-            b = new ListNode(c);
-            if (res == null) {
-                res = b;
-                tail = res;
-            } else {
-                tail.next = b;
-                tail = b;
-            }
+            c = c / 10;
         }
         return res;
     }

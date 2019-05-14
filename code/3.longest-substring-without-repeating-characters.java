@@ -1,3 +1,7 @@
+import java.util.Set;
+
+import javax.xml.stream.events.Characters;
+
 /*
  * @lc app=leetcode id=3 lang=java
  *
@@ -5,32 +9,19 @@
  */
 class Solution {
     public int lengthOfLongestSubstring(String s) {
-        if(s == null || s.length() == 0) {
-            return 0;
-        } else if(s.length() == 1) {
-            return 1;
-        }
-        StringBuilder selection = new StringBuilder();
-        int index = 0;
-        int len = 0;
-        int res = 0;
-        for(int i = 0; i < s.length(); i++) {
-            
-            String ch = s.substring(i, i+1);
-            index = selection.indexOf(ch);
-            
-            if(index != -1) {
-                selection.delete(0, index+1);
-                selection.append(ch);
-                len = len - index;
-                res = Math.max(res, len);
+        Set<Character> substr = new HashSet<Character>();
+        int i = 0;
+        int j = 0;
+        int max = 0;
+        while(j < s.length()) {
+            if(!substr.contains(s.charAt(j))) {
+                substr.add(s.charAt(j++));
+                max = Math.max(max, substr.size());
             } else {
-                selection.append(ch);
-                len++;
-                res = Math.max(res, len);
+                substr.remove(s.charAt(i++));
             }
         }
-        return res;
+        return max;
     }
 }
 

@@ -16,3 +16,4 @@
 | 2019-05-25 | [77](./code/day11/75.sort-colors.java) (56%, 82%), [78](./code/day11/75.sort-colors.java) (71%, 98%), [79](./code/day11/75.sort-colors.java) (15%, 65%) | M, M, M | |
 | 2019-05-27 | [80](./code/day12/80.remove-duplicates-from-sorted-array-ii.java) (93%, 100%), [81](./code/day12/81.search-in-rotated-sorted-array-ii.java) (100%, 11%), [86](./code/day12/86.partition-list.java) (100%, 100%), [89](./code/day12/89.gray-code.java) (100%, 46%) | M, M, M, M | |
 | 2019-05-28 | [82](./code/day13/82.remove-duplicates-from-sorted-list-ii.java) (100%, 100%), [90](./code/day13/90.subsets-ii.java) (18%, 99%), [91](./code/day13/91.decode-ways.java) (91%, 86%) | M, M, M | |
+| 2019-05-29 | [92](./code/day14/92.reverse-linked-list-ii.java) (100%, 100%), [94](./code/day14/94.binary-tree-inorder-traversal.java) (37%, 99%), [96](./code/day14/94.binary-tree-inorder-traversal.java) (100%, 39%) | M, M, M | |
